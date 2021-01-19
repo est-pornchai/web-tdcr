@@ -304,5 +304,10 @@ body {
     .featurette-heading {
       margin-top: 7rem;
     }
+
+    agm-map {
+      height: 300px;
+    }
+    
   }
   

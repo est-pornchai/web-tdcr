@@ -10,6 +10,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ComponentsComponent } from './components/components.component';
 import { ContactComponent } from './contact/contact.component';
 import { AgGridModule } from 'ag-grid-angular';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,9 @@ import { AgGridModule } from 'ag-grid-angular';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AgmCoreModule.forRoot({
+      apiKey: ''
+    }),
     AgGridModule.withComponents([])
   ],
   providers: [],
