@@ -11,6 +11,7 @@ import { ComponentsComponent } from './components/components.component';
 import { ContactComponent } from './contact/contact.component';
 import { AgGridModule } from 'ag-grid-angular';
 import { FooterComponent } from './footer/footer.component';
+import { GridComponent } from './grid/grid.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FooterComponent } from './footer/footer.component';
     NavbarComponent,
     ComponentsComponent,
     ContactComponent,
-    FooterComponent
+    FooterComponent,
+    GridComponent
   ],
   imports: [
     BrowserModule,
