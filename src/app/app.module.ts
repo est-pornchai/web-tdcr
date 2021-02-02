@@ -10,6 +10,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ComponentsComponent } from './components/components.component';
 import { ContactComponent } from './contact/contact.component';
 import { AgGridModule } from 'ag-grid-angular';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AgGridModule } from 'ag-grid-angular';
     AboutComponent,
     NavbarComponent,
     ComponentsComponent,
-    ContactComponent
+    ContactComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
