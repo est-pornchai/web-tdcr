@@ -12,6 +12,17 @@ import { ContactComponent } from './contact/contact.component';
 import { AgGridModule } from 'ag-grid-angular';
 import { FooterComponent } from './footer/footer.component';
 import { GridComponent } from './grid/grid.component';
+import { PlaygroundComponent } from './playground/playground.component';
+import { StorageComponent } from '../app/grid/storage/storage.component';
+import { ShopuiComponent } from '../app/grid/shopui/shopui.component';
+import { ButtonRendererComponent } from '../app/grid/storage/button.component';
+import { ItemService } from '../app/grid/item.service';
+import { DragDropModule} from '@angular/cdk/drag-drop';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -23,14 +34,20 @@ import { GridComponent } from './grid/grid.component';
     ComponentsComponent,
     ContactComponent,
     FooterComponent,
-    GridComponent
+    GridComponent,
+    PlaygroundComponent,
+    ShopuiComponent,
+    StorageComponent,
+    ButtonRendererComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    AgGridModule.withComponents([])
+    AppRoutingModule,BrowserAnimationsModule,
+    DragDropModule,FormsModule,ReactiveFormsModule, HttpClientModule,
+    AgGridModule.withComponents([ButtonRendererComponent])
   ],
-  providers: [],
+  exports:[],
+  providers: [ItemService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

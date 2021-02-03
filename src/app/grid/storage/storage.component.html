@@ -1,0 +1,40 @@
+
+
+<div>
+    <button class="btn btn-primary mb-3" (click)="onAddRow()">New</button>&nbsp;
+</div>
+
+<!--<button class="btn btn-primary mb-3" (click)="onDelete()">Delete</button>-->
+<div>
+    <div  [hidden]="!HideGrid">
+        <ag-grid-angular
+            class="ag-theme-alpine"
+            (gridReady)="onGridReady($event)"
+            (rowDoubleClicked)="onSelectionChanged(rowData)"
+            
+            #agGrid
+            [columnDefs]="columnDefs"
+            [rowData]="rowData"
+            [rowSelection] = "rowSelection"
+            [frameworkComponents]="frameworkComponents"
+        >
+        </ag-grid-angular>
+       <!--(rowDoubleClicked)="onRowDoubleClick(rowData)"-->
+    </div>
+    <div *ngIf="_item" class="div2" [hidden]="HideGrid">
+        <h2>Add or Edit</h2>
+
+        <p><span style="color:red" >No :</span>
+        <label >{{_item.no}}</label></p>
+
+        <p><span style="color:red" >Name :</span>
+        <input type="text" [(ngModel)]="_item.name" ></p>
+
+        <p><span style="color:red" >Price :</span>
+        <input type="text"[(ngModel)]="_item.price"></p>
+            
+        <p><span style="color:red" >Quantity :</span>
+        <input  type="text"  [(ngModel)]="_item.quantity"></p>
+        <button  (click)="register()">Register</button>
+    </div>
+</div>
