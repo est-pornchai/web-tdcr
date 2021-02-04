@@ -10,13 +10,8 @@ import { ViewChild } from '@angular/core';
 export class ChildComponent {
   @Input("ChildCount") count = 0;
 
+  rowData = []
+  columnDefs = [{ field: "No" }, { field: "Name" }, { field: "Age" }];
 
-  columnDefs = [
-    {}
-];
-
-rowData = [
-    {}
-];
-
+  
  }

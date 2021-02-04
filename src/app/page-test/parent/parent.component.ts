@@ -11,4 +11,6 @@ export class ParentComponent  {
   addParentCount(){
     this.ParentCount = this.ParentCount + 1 ;
   }
+
+  
 }
