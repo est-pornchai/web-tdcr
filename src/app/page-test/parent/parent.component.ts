@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { count } from 'console';
+import { title } from 'process';
+
 
 @Component({
   selector: 'app-parent',
@@ -8,21 +9,35 @@ import { count } from 'console';
 })
 export class ParentComponent  {
   ParentCount = 0;
-  rows = [];
+  rows = [{},];
+  
+   groups = [
+    {
+     
+    },
+  ];
 
-  addParentCount(){
-    this.ParentCount = this.ParentCount + 1 ;
+  addParentCount(index) {
+    var current = this.rows[index];
+    this.rows.splice(index, 0, current);
+    this.ParentCount ++;
     
   } 
+  /*addParentCount(){
 
-//  groups = [
-  //  {
-  //    "count": "No"
-  //  },
-  //];
-  //addItem(index) {
-   // var currentElement = this.groups[index];
-   // this.groups.splice(index, 0, currentElement);
- // }
+    this.ParentCount = this.ParentCount +1 ;
+    
+  } */
+  
+
+/* groups = [
+   {
+      "count": "No"
+   },
+  ];
+  addItem(index) {
+    var currentElement = this.groups[index];
+    this.groups.splice(index, 0, currentElement);
+  }*/
   
 }
