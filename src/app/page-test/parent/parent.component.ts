@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Output,Input } from '@angular/core';
 import { title } from 'process';
 
 
@@ -8,27 +8,24 @@ import { title } from 'process';
   styleUrls: ['./parent.component.css']
 })
 export class ParentComponent  {
-  ParentCount = 0;
-  rows = [{},];
-  
-   groups = [
-    {
-     
-    },
-  ];
+     ParentCount = 0 ;
 
-  addParentCount(index) {
+
+  /*addParentCount(index) {
     var current = this.rows[index];
     this.rows.splice(index, 0, current);
     this.ParentCount ++;
     
-  } 
-  /*addParentCount(){
-
-    this.ParentCount = this.ParentCount +1 ;
-    
   } */
-  
+
+
+  addParentCount(){
+  console.log(this.ParentCount)
+  this.ParentCount ++;
+    
+    
+  }
+}
 
 /* groups = [
    {
@@ -39,5 +36,4 @@ export class ParentComponent  {
     var currentElement = this.groups[index];
     this.groups.splice(index, 0, currentElement);
   }*/
-  
-}
+

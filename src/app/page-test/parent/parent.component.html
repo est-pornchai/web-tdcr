@@ -18,22 +18,29 @@
   </main>
   </body>
     
-<div >
-    
-    <button (click)="addParentCount($event)" >ส่งข้อมูล {{ParentCount}}</button>
-    <app-child [ChildCount] = "ParentCount"></app-child>
-
+<div>
+    <button (click)="addParentCount()" >ส่งข้อมูล {{ParentCount}}</button>
     <table class="table border">
+        <tr>
+          <td> No </td>
+ </tr>
+          <tr>
+              <td> {{ParentCount}} </td>
+     </tr>
+    </table>
+    <app-child ></app-child>
+
+   <!-- <table class="table border">
         <tbody>
           <tr>
             <td> No </td>
    </tr>
             <tr *ngFor="let row of rows; let i = index">
-                <!--<td> {{row.count}} </td>-->
+                <td> {{row.count}} </td>
                 <td> {{ParentCount}} </td>
        </tr>
         </tbody>
-      </table>
+      </table> -->
 
       
 </div>
