@@ -2,16 +2,43 @@
     child works! {{count}}
     <button (click)="clearCount()" >Clear</button>
   </p>
+
+
+
+
+    <!--1st-->
      <table class="table border">
-          <tr>
-            <td> No </td>
-   </tr>
-            <tr>
-                <td> {{count}} </td>
+         
+        <tr *ngFor="let row of dummyArr">
+            <td>
+             {{row}} 
+            </td>
+
        </tr>
-      </table>
+    </table>
+
+
+    <!--2nd-->
+    <table class="table border">
+         
+        <tr *ngFor="let ele of genDummyArr()">
+            <td>
+             {{ele}} 
+            </td>
+
+       </tr>
+    </table>
+
+
+
   
-      <!--<ul>
-        <li *ngFor='let l of languages'>{{l}}</li>
-                 {{count}}
-                </ul>-->
+ <!-- <table class="table border">
+      <tbody>
+        <tr>
+          <td> No </td>
+ </tr>
+          <tr *ngFor="let row of rows; let i = index">
+              <td> {{count}} </td>
+     </tr>
+      </tbody>
+    </table>-->

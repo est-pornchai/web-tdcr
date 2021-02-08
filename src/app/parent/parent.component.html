@@ -20,6 +20,12 @@
 
 <div>
   <button (click)="addParentCount()" >ส่งข้อมูล {{ParentCount}}</button>
+  <app-child (onClearCount)="clearCount($event)" [ChildCount]="ParentCount"></app-child>
+</div>
+
+<hr class="featurette-divider">
+<footer></footer>
+
  <!-- <table class="table border">
       <tr>
         <td> No </td>
@@ -28,8 +34,7 @@
             <td> {{ParentCount}} </td>
    </tr>
   </table>-->
-  <app-child (onClearCount)="clearCount($event)" [ChildCount]="ParentCount"></app-child>
-
+  
  <!-- <table class="table border">
       <tbody>
         <tr>
@@ -42,12 +47,3 @@
       </tbody>
     </table> -->
 
-
-</div>
-
-
-
-
-<hr class="featurette-divider">
-
-<footer></footer>
