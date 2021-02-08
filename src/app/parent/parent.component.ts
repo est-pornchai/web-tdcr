@@ -1,5 +1,5 @@
 import { Component, OnInit,Output,Input } from '@angular/core';
-import { title } from 'process';
+
 
 
 @Component({
@@ -7,7 +7,7 @@ import { title } from 'process';
   templateUrl: './parent.component.html',
   styleUrls: ['./parent.component.css']
 })
-export class ParentComponent  {
+export class ParentComponent {
      ParentCount = 0 ;
 
 
@@ -15,17 +15,22 @@ export class ParentComponent  {
     var current = this.rows[index];
     this.rows.splice(index, 0, current);
     this.ParentCount ++;
-    
+
   } */
 
 
   addParentCount(){
   console.log(this.ParentCount)
-  this.ParentCount ++;
-    
-    
+  this.ParentCount = this.ParentCount +1;
   }
-}
+
+  clearCount(value){
+    this.ParentCount = value;
+    console.log(this.clearCount)
+    console.log(this.ParentCount)
+
+  }
+  }
 
 /* groups = [
    {

@@ -1,25 +1,40 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit,Output,Input,EventEmitter } from '@angular/core';
 import { AgGridAngular } from 'ag-grid-angular';
 import { ViewChild } from '@angular/core';
-import { ParentComponent } from '../page-test/parent/parent.component';
-import { from } from 'rxjs';
-import { count } from 'console';
+import { ParentComponent } from '../parent/parent.component';
+
 
 @Component({
   selector: 'app-child',
   templateUrl: './child.component.html',
   styleUrls: ['./child.component.css']
 })
-export class ChildComponent {
-  @Input("ChildCount") count:Number ;
+export class ChildComponent implements OnInit {
+  @Input("ChildCount") count = 0 ;
+  @Output() onClearCount = new EventEmitter <number>();
 
 
-  
+
+  //languages = ['0','1',];
+
   constructor() { }
-  
-  ngOnInit(): void {
-    
+
+  ngOnInit() {
     console.log(this.count)
+
+
+   /* for (let i = 1; i <= 10 ; i++) {
+      console.log(i);
+    }*/
+
+    }
+    clearCount(){
+      this.onClearCount.emit(0);
+      console.log(this.clearCount)
+      console.log(this.count)
+    }
+
   }
 
-}
+
+

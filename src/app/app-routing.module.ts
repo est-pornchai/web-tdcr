@@ -8,7 +8,7 @@ import { GridTestComponent } from '../app/grid-test/grid-test.component';
 import { ComponentsComponent } from './components/components.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
-import { ParentComponent } from './page-test/parent/parent.component';
+import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 
 
@@ -22,7 +22,7 @@ const routes: Routes = [
   {path: 'shopui', component: ShopuiComponent},
   {path: 'grid-test', component: GridTestComponent},
   {path: 'child', component: ChildComponent},
-  {path: 'page-test', component: ParentComponent},
+  {path: 'parent', component: ParentComponent},
   {path: '**',component:ComponentsComponent}
 ];
 
