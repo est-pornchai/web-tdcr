@@ -18,6 +18,7 @@ export class ParentComponent {
 
   } */
 
+  
 
   addParentCount(){
   console.log(this.ParentCount)

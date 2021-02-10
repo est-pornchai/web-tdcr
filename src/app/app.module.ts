@@ -25,6 +25,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GridTestComponent } from './grid-test/grid-test.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
+import { PageTestComponent } from './page-test/page-test.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { ChildComponent } from './child/child.component';
     ButtonRendererComponent,
     GridTestComponent,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
+    PageTestComponent
     
   ],
   imports: [

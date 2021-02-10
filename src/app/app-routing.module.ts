@@ -10,7 +10,8 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
-
+import { GridComponent } from './grid/grid.component';
+import { PageTestComponent } from './page-test/page-test.component';
 
 const routes: Routes = [
   {path: '',component:ComponentsComponent,pathMatch:'full'},
@@ -23,6 +24,8 @@ const routes: Routes = [
   {path: 'grid-test', component: GridTestComponent},
   {path: 'child', component: ChildComponent},
   {path: 'parent', component: ParentComponent},
+  {path: 'grid', component: GridComponent},
+  {path: 'page-test', component: PageTestComponent},
   {path: '**',component:ComponentsComponent}
 ];
 
