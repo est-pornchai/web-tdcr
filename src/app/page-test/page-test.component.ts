@@ -67,11 +67,93 @@ export class PageTestComponent implements OnInit {
     }
     console.log("ค่าสุดท้ายของ item =" + item);*/
 
-    function sumInput(first:number, second:number):void {
+    /*function sumInput(first:number, second:number):void {
       let result = first + second;
       console.log(`ค่ารวม${first} กับ ${second} คือ ${result}`);
     
       }
-    sumInput(5,3);
+    sumInput(5,3);*/
+
+    /* function CalcSum(value1: number, value2:number): number {
+    	let  r = value1 +　value2;
+      console.log(r);
+	if (r < 0)
+	{
+		throw Error ("Error");
+	}
+	return r;
+  
+}*/
+
+/*function hello2<T, U>(word1: T, word2: U){
+  alert(word1);
+  alert(word2);
+}
+hello2<string, number>('test', 555); 
+console.log(hello2)*/
+
+/*function hello3<T>(word1: T){
+  return (word1+' คือ');
+}
+
+var test = hello3<string>('คุณ');
+alert(test);
+console.log(hello3)
+console.log(test)*/
+
+//นำค่าที่ได้กลับจากฟังก์มาใช้งาน
+/*function sumInput (data: number[]) :number{
+  let sum: number = 0;
+  for (let item of data){
+    sum += item;
+  }
+  return sum;
+}
+var myInput = [1,2,3,4,5];
+var result = sumInput(myInput);
+console.log("ผลรวม คือ " + result);*/
+
+//Arrow function
+/*let myVariable1: ()=>string;
+let myVariable2: (number, string)=>boolean;
+let myVariable3: (string, boolean)=>void;
+myVariable1 = ()=>{
+  return "What!"
+};
+let result = myVariable1();
+console.log(result);*/
+
+
+//Callback function
+/*function calculator(a:number, b:number, myOperator:(input1:number,input2:number)=>number) :number{
+  let result = myOperator(a,b);
+  return result;
+}
+function multiply(input1:number, input2:number):number{
+  return input1*input2;
+}
+let result1 = calculator(22481,35,multiply);
+console.log(result1+' THB')*/
+
+
+
+//Callback function2
+function calculator(a:number, b:number, myOperator:(input1:number,input2:number)=>number) :number{
+  let result = myOperator(a,b);
+  return result;
+}
+let result1 = calculator(22481,35,(input1,input2)=>{
+  return input1*input2;
+});
+console.log(result1+' THB')
+let result2 = calculator(22481,35,(input1,input2)=>{
+  return input1+input2;
+});
+console.log(result2+' THB')
+let result3 = calculator(22481,35,(input1,input2)=>{
+  return input1-input2;
+});
+console.log(result3+' THB')
+console.log(calculator)
   }
 }
