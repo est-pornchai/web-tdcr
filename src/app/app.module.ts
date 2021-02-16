@@ -53,7 +53,7 @@ import { PageTestComponent } from './page-test/page-test.component';
     BrowserModule,
     AppRoutingModule,BrowserAnimationsModule,
     DragDropModule,FormsModule,ReactiveFormsModule, HttpClientModule,
-    AgGridModule.withComponents([])
+    AgGridModule.withComponents([ButtonRendererComponent])
   ],
   exports:[],
   providers: [ItemService],

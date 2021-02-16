@@ -138,7 +138,7 @@ console.log(result1+' THB')*/
 
 
 //Callback function2
-function calculator(a:number, b:number, myOperator:(input1:number,input2:number)=>number) :number{
+/*function calculator(a:number, b:number, myOperator:(input1:number,input2:number)=>number) :number{
   let result = myOperator(a,b);
   return result;
 }
@@ -155,5 +155,10 @@ let result3 = calculator(22481,35,(input1,input2)=>{
 });
 console.log(result3+' THB')
 console.log(calculator)
+*/
+
+
+
+
   }
 }

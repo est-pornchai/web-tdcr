@@ -20,14 +20,7 @@ export class ItemService {
   private _basket:Items[]=[]
   addId:Items[]=[]
 
-  /*addIds(id:Items) {     
-    id.no = this.addId.length + 1;     
-    this.addId.push(id);
-    
-  }
-  getIds(): Items[]{
-    return this.addId;
-  }*/
+
   //additem&getitems รับส่งไปแสดงที่ UI
   addItem(item:Items,chek) {
     if(chek == false){

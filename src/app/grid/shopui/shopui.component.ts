@@ -42,11 +42,7 @@ export class ShopuiComponent implements OnInit {
   }
   color =[]
   getarreach(d1,d2,d3){
-    
-    /*for (let index = 0; index < this.color.length; index++) {
-      this.color[index] = (this.dynamicColors())
-    }*/
-    //this.getall.push(this.arreach.indexOf(this.basket[index]))
+
     
     this.arreach.splice(d3,1,d1*d2)
     
@@ -86,10 +82,7 @@ export class ShopuiComponent implements OnInit {
     
     var idx = event.container.data.indexOf(event.previousContainer.data[event.previousIndex]);
     if (idx != -1) {
-      //moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
       this.isPointerOverContainer = event.isPointerOverContainer;
-      //console.log(this.isPointerOverContainer)
-     
     } 
     else{
       event.previousContainer.data[event.previousIndex].sumUnit = 0;
@@ -97,7 +90,6 @@ export class ShopuiComponent implements OnInit {
         event.container.data,
         event.previousIndex,
         this.basket.length)
-      //this.ItemService.addBasket(event)
       console.log(event.container.data)
       this.color.push(this.dynamicColors())
       

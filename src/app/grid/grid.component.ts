@@ -16,16 +16,18 @@ export class GridComponent {
   constructor(private router: Router){}
   dis :boolean = false
   dis2 :boolean = true
+  
   switchpage(){
     
-    this.router.navigateByUrl('/shopui');
+    this.router.navigateByUrl('/storage');
     this.dis = true
     this.dis2=false
     
   }
   switchpage2(){
-    this.router.navigateByUrl('/storage');
+    this.router.navigateByUrl('/shopui');
     this.dis2 =true
     this.dis = false
   }
+  
 }
