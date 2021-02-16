@@ -13,7 +13,7 @@ export class GridComponent {
   }
 
   //router :Router
-  constructor(private router: Router){}
+  constructor(private router: Router){}  
   dis :boolean = false
   dis2 :boolean = true
   
