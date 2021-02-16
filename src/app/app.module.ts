@@ -11,12 +11,12 @@ import { ComponentsComponent } from './components/components.component';
 import { ContactComponent } from './contact/contact.component';
 import { AgGridModule } from 'ag-grid-angular';
 import { FooterComponent } from './footer/footer.component';
-import { GridComponent } from './grid/grid.component';
+//import { GridComponent } from './grid/grid.component';
 import { PlaygroundComponent } from './playground/playground.component';
-import { StorageComponent } from '../app/grid/storage/storage.component';
-import { ShopuiComponent } from '../app/grid/shopui/shopui.component';
-import { ButtonRendererComponent } from '../app/grid/storage/button.component';
-import { ItemService } from '../app/grid/item.service';
+import { StorageComponent } from './storage/storage.component';
+import { ShopuiComponent } from './shopui/shopui.component';
+import { ButtonRendererComponent } from './storage/button.component';
+import { ItemService } from './item.service';
 import { DragDropModule} from '@angular/cdk/drag-drop';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -38,7 +38,7 @@ import { PageTestComponent } from './page-test/page-test.component';
     ComponentsComponent,
     ContactComponent,
     FooterComponent,
-    GridComponent,
+    //GridComponent,
     PlaygroundComponent,
     ShopuiComponent,
     StorageComponent,

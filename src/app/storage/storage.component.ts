@@ -4,7 +4,8 @@ import { ViewChild ,Input} from '@angular/core';
 import { ButtonRendererComponent } from './button.component';
 import { Items } from '../Items';
 import {ItemService} from '../item.service'
-import { RouterEvent } from '@angular/router';
+import { Router, RouterEvent } from '@angular/router';
+
 
 @Component({
   selector: 'app-storage',
@@ -44,18 +45,31 @@ export class StorageComponent implements OnInit {
   getitemno = []
   
   ngOnInit() {
-    
     this.rowData = this.ItemService.getItems2()
     
-    
   }
-
-  constructor(private ItemService : ItemService) {
+  constructor(private ItemService : ItemService,private router: Router) {
     this.frameworkComponents = {
       buttonRenderer: ButtonRendererComponent,
     }
+  }
+
+  dis :boolean = false
+  dis2 :boolean = true
+  
+  switchpage(){
+    
+    this.router.navigateByUrl('/storage');
+    this.dis = true
+    this.dis2=false
     
   }
+  switchpage2(){
+    this.router.navigateByUrl('/shopui');
+    this.dis2 =true
+    this.dis = false
+  }
+
 
   public get Item():Items{
     return this._item;
@@ -80,12 +94,6 @@ HideGrid = true
   
 
   rowSelection='single'
-  /*gridOption = {
-     getRowNodeId : function(data){
-      return data.id
-    }
-  }*/
-
   checkselect = false
   itemupdate = []
   onSelectionChanged(event){
@@ -104,20 +112,7 @@ HideGrid = true
   _item:Items
   numcheck:number
   register(){
-    
-    /*this.addNo = this.selected.no
-    this.addName = this.selected.name
-    this.addPrice = this.selected.price
-    this.addQuantity = this.selected.quantity*/
     if (this.checkselect == true) {
-      /*var rowNode = this.gridApi.getRowNode(this._item.no-1)
-      var newData = {
-        no:this.addNo,
-        name:this.addName,
-        price:this.addPrice,
-        quantity:this.addQuantity,
-      }*/
-      //rowNode.updateData(newData)
       var rowNode = this.gridApi.getRowNode(this._item.no-1)
       var data = rowNode.data
       data.no = this._item.no
@@ -129,17 +124,13 @@ HideGrid = true
       })
       this.ItemService.addItem2(data,this.checkselect);
       this.ItemService.addItem(data,this.checkselect);
-     
     }
-
     if(this.check == false){
       this.agGrid.api.updateRowData({
         add: [{ no: this._item.no, name: this._item.name, price: this._item.price ,quantity:this._item.quantity}]
       })
       this.check =true
-      
     }
-    
     console.log(this.check)
     const currentItem:Items = {
       no:this._item.no,
@@ -151,23 +142,15 @@ HideGrid = true
     this.ItemService.addItem(currentItem,this.checkselect);
     this.ItemService.addItem2(currentItem,this.checkselect);
     this.checkselect = false
-    /*this._item.no = 0
-    this._item.name =''
-    this._item.price = 0
-    this._item.quantity =0
-    this._item.sumUnit = 0*/
     this.HideGrid = true
   }
   
   b = []
   onAddRow() {
-    this.HideGrid = false
-   
-    
+    this.HideGrid = false    
     if (this.rowData.length == this.no) {
       this.no=this.rowData.length+1
       this._item = {no:this.no,name:'',price:0,quantity:0,sumUnit:0}
-     
     }
     else if (this.rowData.length != this.no) {
       console.log(this.rowData)
@@ -176,9 +159,7 @@ HideGrid = true
       this._item = {no:this.no,name:'',price:0,quantity:0,sumUnit:0}
     }
     
-    
     this.check = false
-    //this.ckk = true
     
   }
   //กำหนดอีเว้น ของปุ่ม ลบ ที่อยู่ในตาราง โดยการคลิก row/ข้อมูล ที่อยู่ในตารางแล้วกด ปุ่ม Delete
@@ -196,13 +177,24 @@ HideGrid = true
     this.ItemService.delete2(rowDataClicked,this.checkdelete);
     this.checkdelete = 0
     this.ckk = false
-    /*this.checkdelete = 1
-    var ro = this.gridApi.getSelectedRow()
-    var selectedremove = ro.data
-    console.log(selectedremove)
-    this.ItemService.delete(selectedremove,this.checkdelete);
-    this.ItemService.delete2(selectedremove,this.checkdelete);
-    this.checkdelete = 0*/
-    
   }
 }
+
+/*  constructor(private router: Router){}
+  dis :boolean = false
+  dis2 :boolean = true
+  
+  switchpage(){
+    
+    this.router.navigateByUrl('/storage');
+    this.dis = true
+    this.dis2=false
+    
+  }
+  switchpage2(){
+    this.router.navigateByUrl('/shopui');
+    this.dis2 =true
+    this.dis = false
+  }
+  
+}*/
