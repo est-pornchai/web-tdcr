@@ -156,9 +156,17 @@ let result3 = calculator(22481,35,(input1,input2)=>{
 console.log(result3+' THB')
 console.log(calculator)
 */
-
-
-
-
   }
 }
+
+//การสร้าง instance จาก class
+/*firstProperty : number = 100;
+secondProperty : number[] = [1,2,3];
+}
+const myInstance = new PageTestComponent();
+let result = myInstance.firstProperty;
+console.log(result);
+let result2 = myInstance.secondProperty.length;
+console.log(result2);
+console.log(myInstance);*/
+ 
