@@ -156,8 +156,13 @@ let result3 = calculator(22481,35,(input1,input2)=>{
 console.log(result3+' THB')
 console.log(calculator)
 */
+
+
+
+
+
   }
-}
+
 
 //การสร้าง instance จาก class
 /*firstProperty : number = 100;
@@ -169,4 +174,21 @@ console.log(result);
 let result2 = myInstance.secondProperty.length;
 console.log(result2);
 console.log(myInstance);*/
+
+ property01: number = 0;
+ method1(){
+  console.log("How are you");
+  }
+ method2(input: string){
+   console.log("Input age is: " + input);
+  }
+ method3(input1:number, input2: number):number{
+   return input1 + input2;
+  }
+ }
+ let myInstance = new PageTestComponent();
+ myInstance.method1();
+ myInstance.method2("Year!");
+ let result = myInstance.method3(27,28);
+ console.log(result);
  
