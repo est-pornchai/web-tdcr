@@ -11,8 +11,6 @@ import { Component, OnInit } from '@angular/core';
 export class PageTestComponent implements OnInit {
 
 
-
-  
   constructor() { }
 
   ngOnInit(): void {
@@ -156,10 +154,6 @@ let result3 = calculator(22481,35,(input1,input2)=>{
 console.log(result3+' THB')
 console.log(calculator)
 */
-
-
-
-
 
   }
 
